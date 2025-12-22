@@ -1,0 +1,409 @@
+/* 🖥️ Retro Layout - Windows 98 / Internet Explorer 5 Style */
+
+/* Windows 98 color system */
+@theme {
+  --color-win98-bg: #C0C0C0;
+  --color-win98-dark: #808080;
+  --color-win98-darker: #404040;
+  --color-win98-light: #DFDFDF;
+  --color-win98-white: #FFFFFF;
+  --color-win98-text: #000000;
+  --color-win98-title-start: #000080;
+  --color-win98-title-end: #1084D0;
+  --color-win98-title-text: #FFFFFF;
+  --color-win98-link: #0000FF;
+  --color-win98-link-visited: #800080;
+}
+
+@layer components {
+  /* ========================================
+     Windows 98 System Fonts
+     ======================================== */
+  .retro-font {
+    font-family: "MS Sans Serif", "Tahoma", "Arial", sans-serif;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+
+  /* ========================================
+     Main Retro Layout (Browser Window)
+     ======================================== */
+  .retro-layout {
+    @apply h-screen w-screen overflow-hidden flex flex-col;
+    background: var(--color-win98-bg);
+    font-family: "MS Sans Serif", "Tahoma", sans-serif;
+  }
+
+  /* ========================================
+     3D Border Effects (Classic Windows Style)
+     ======================================== */
+  .retro-raised {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-inset {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-sunken {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-darker) var(--color-win98-white) var(--color-win98-white) var(--color-win98-darker);
+  }
+
+  /* ========================================
+     Title Bar
+     ======================================== */
+  .retro-titlebar {
+    @apply flex items-center justify-between px-1 py-0.5;
+    background: linear-gradient(90deg, var(--color-win98-title-start) 0%, var(--color-win98-title-end) 100%);
+    height: 22px;
+  }
+
+  .retro-titlebar-left {
+    @apply flex items-center gap-1.5;
+  }
+
+  .retro-titlebar-icon {
+    @apply w-4 h-4;
+  }
+
+  .retro-titlebar-text {
+    @apply text-xs font-bold truncate;
+    color: var(--color-win98-title-text);
+    text-shadow: none;
+  }
+
+  .retro-titlebar-buttons {
+    @apply flex gap-0.5;
+  }
+
+  .retro-window-btn {
+    @apply w-4 h-4 flex items-center justify-center text-xs font-bold;
+    background: var(--color-win98-bg);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+    font-family: "Marlett", sans-serif;
+  }
+
+  .retro-window-btn:active {
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-close-btn {
+    background: var(--color-win98-bg);
+  }
+
+  /* ========================================
+     Menu Bar
+     ======================================== */
+  .retro-menubar {
+    @apply flex items-center px-1;
+    background: var(--color-win98-bg);
+    height: 20px;
+  }
+
+  .retro-menu-item {
+    @apply px-2 py-0.5 text-xs;
+    color: var(--color-win98-text);
+  }
+
+  .retro-menu-item:hover {
+    background: var(--color-win98-title-start);
+    color: var(--color-win98-white);
+  }
+
+  .retro-menu-item-underline {
+    text-decoration: underline;
+  }
+
+  /* ========================================
+     Toolbar
+     ======================================== */
+  .retro-toolbar {
+    @apply flex items-center gap-1 px-2 py-1;
+    background: var(--color-win98-bg);
+    border-bottom: 1px solid var(--color-win98-dark);
+  }
+
+  .retro-toolbar-btn {
+    @apply flex flex-col items-center justify-center px-2 py-1 text-xs;
+    min-width: 45px;
+    color: var(--color-win98-text);
+    background: var(--color-win98-bg);
+    border: 1px solid transparent;
+  }
+
+  .retro-toolbar-btn:hover {
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-toolbar-btn:active {
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-toolbar-btn-icon {
+    @apply w-5 h-5 mb-0.5;
+  }
+
+  .retro-toolbar-separator {
+    @apply w-px h-6 mx-1;
+    background: var(--color-win98-dark);
+  }
+
+  /* ========================================
+     Address Bar
+     ======================================== */
+  .retro-addressbar {
+    @apply flex items-center gap-2 px-2 py-1;
+    background: var(--color-win98-bg);
+    border-bottom: 1px solid var(--color-win98-dark);
+  }
+
+  .retro-addressbar-label {
+    @apply text-xs;
+    color: var(--color-win98-text);
+  }
+
+  .retro-addressbar-input {
+    @apply flex-1 px-1 py-0.5 text-xs;
+    background: var(--color-win98-white);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-addressbar-input:focus {
+    outline: none;
+  }
+
+  .retro-go-btn {
+    @apply px-3 py-0.5 text-xs;
+    background: var(--color-win98-bg);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-go-btn:active {
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  /* ========================================
+     Content Area (Browser Window)
+     ======================================== */
+  .retro-content {
+    @apply flex-1 overflow-auto;
+    background: var(--color-win98-white);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+    margin: 2px;
+  }
+
+  .retro-content-inner {
+    @apply p-4;
+  }
+
+  /* ========================================
+     Status Bar
+     ======================================== */
+  .retro-statusbar {
+    @apply flex items-center justify-between px-2 py-0.5 text-xs;
+    background: var(--color-win98-bg);
+    height: 20px;
+    border-top: 1px solid var(--color-win98-light);
+  }
+
+  .retro-status-left {
+    @apply flex items-center gap-2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+    padding: 0 4px;
+    height: 16px;
+  }
+
+  .retro-status-icon {
+    @apply w-3 h-3;
+  }
+
+  .retro-status-right {
+    @apply flex items-center gap-2;
+  }
+
+  .retro-status-zone {
+    @apply px-2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+    height: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ========================================
+     Retro Button Styles
+     ======================================== */
+  .retro-btn {
+    @apply px-4 py-1 text-xs;
+    background: var(--color-win98-bg);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-btn:active {
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-btn:focus {
+    outline: 1px dotted var(--color-win98-text);
+    outline-offset: -4px;
+  }
+
+  /* ========================================
+     Retro Input Styles
+     ======================================== */
+  .retro-input {
+    @apply px-2 py-1 text-sm;
+    background: var(--color-win98-white);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  .retro-input:focus {
+    outline: none;
+  }
+
+  /* ========================================
+     Retro Link Styles
+     ======================================== */
+  .retro-link {
+    color: var(--color-win98-link);
+    text-decoration: underline;
+  }
+
+  .retro-link:visited {
+    color: var(--color-win98-link-visited);
+  }
+
+  .retro-link:hover {
+    text-decoration: underline;
+  }
+
+  /* ========================================
+     Retro Table (for content display)
+     ======================================== */
+  .retro-table {
+    @apply w-full text-sm;
+    border-collapse: collapse;
+  }
+
+  .retro-table th,
+  .retro-table td {
+    @apply p-2 text-left;
+    border: 1px solid var(--color-win98-dark);
+  }
+
+  .retro-table th {
+    background: var(--color-win98-bg);
+    font-weight: bold;
+  }
+
+  .retro-table tr:nth-child(even) {
+    background: #f0f0f0;
+  }
+
+  /* ========================================
+     IE5 Icons (using Unicode/CSS)
+     ======================================== */
+  .retro-icon-back::before {
+    content: "←";
+  }
+  
+  .retro-icon-forward::before {
+    content: "→";
+  }
+  
+  .retro-icon-refresh::before {
+    content: "↻";
+  }
+  
+  .retro-icon-home::before {
+    content: "🏠";
+  }
+  
+  .retro-icon-search::before {
+    content: "🔍";
+  }
+
+  .retro-icon-favorites::before {
+    content: "⭐";
+  }
+
+  .retro-icon-mail::before {
+    content: "✉";
+  }
+
+  /* ========================================
+     Retro Theme Toggle
+     ======================================== */
+  .retro-theme-toggle {
+    @apply px-2 py-0.5 text-xs cursor-pointer;
+    background: var(--color-win98-bg);
+    color: var(--color-win98-text);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-theme-toggle:active {
+    border-color: var(--color-win98-dark) var(--color-win98-light) var(--color-win98-light) var(--color-win98-dark);
+  }
+
+  /* ========================================
+     Retro Scrollbar
+     ======================================== */
+  .retro-content::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .retro-content::-webkit-scrollbar-track {
+    background: var(--color-win98-bg);
+  }
+
+  .retro-content::-webkit-scrollbar-thumb {
+    background: var(--color-win98-bg);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+  }
+
+  .retro-content::-webkit-scrollbar-button {
+    background: var(--color-win98-bg);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-win98-light) var(--color-win98-dark) var(--color-win98-dark) var(--color-win98-light);
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Dark mode adjustments for retro layout - keep it authentic */
+.dark .retro-layout {
+  /* Keep the classic gray even in dark mode for authenticity */
+  background: var(--color-win98-bg);
+}
