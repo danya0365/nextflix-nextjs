@@ -1,0 +1,395 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+  padding-bottom: 4rem;
+  overflow-x: hidden;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2rem;
+  background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #f5b700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Kids Logo */
+.kidsLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kidsLogo span:first-child {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #e50914;
+  letter-spacing: 0.1em;
+}
+
+.kidsLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f5b700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(26, 10, 46, 0.95) 0%, transparent 100%);
+}
+
+.header .kidsLogo span:first-child {
+  font-size: 1.5rem;
+}
+
+.exitButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.exitButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+.searchButton {
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.searchButton:hover {
+  transform: scale(1.2);
+}
+
+/* Featured Section */
+.featured {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.featuredBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6) saturate(1.2);
+}
+
+.featuredBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 10, 46, 0.3) 0%,
+    rgba(26, 10, 46, 0.5) 50%,
+    rgba(26, 10, 46, 1) 100%
+  );
+}
+
+.featuredContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.featuredInfo {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.featuredInfo h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.featuredInfo p {
+  font-size: 1.125rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.featuredButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.playButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f5b700 0%, #ff6b35 100%);
+  color: #000;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.875rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(245, 183, 0, 0.4);
+}
+
+.playButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(245, 183, 0, 0.6);
+}
+
+.moreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.moreButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Elements */
+.characters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5) 0%, rgba(100, 200, 255, 0.2) 100%);
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.star {
+  position: absolute;
+  font-size: 2rem;
+  color: #f5b700;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Content Rows */
+.rowsContainer {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.row {
+  position: relative;
+}
+
+.rowTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rowContent {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.rowContent::-webkit-scrollbar {
+  height: 8px;
+}
+
+.rowContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rowContent::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Content Cards */
+.card {
+  flex-shrink: 0;
+  width: 180px;
+  aspect-ratio: 2/3;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 183, 0, 0.3);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+}
+
+.card:hover .cardImage {
+  filter: brightness(0.8);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.footerEmoji {
+  font-size: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header .kidsLogo span:first-child {
+    font-size: 1.25rem;
+  }
+
+  .kidsLabel {
+    font-size: 0.625rem;
+  }
+
+  .featured {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .featuredInfo h1 {
+    font-size: 2rem;
+  }
+
+  .featuredInfo p {
+    font-size: 0.9375rem;
+  }
+
+  .rowsContainer {
+    padding: 0 1rem;
+  }
+
+  .rowTitle {
+    font-size: 1.25rem;
+  }
+
+  .card {
+    width: 140px;
+  }
+}

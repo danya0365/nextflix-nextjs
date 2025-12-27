@@ -1,0 +1,375 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(229, 9, 20, 0.3);
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.content {
+  max-width: 500px;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Avatar Section */
+.avatarSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.currentAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.currentAvatar:hover {
+  transform: scale(1.05);
+}
+
+.currentAvatar:hover .editOverlay {
+  opacity: 1;
+}
+
+.avatarLetter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.editOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.editOverlay span {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Avatar Picker */
+.avatarPickerOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.avatarPicker {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #333;
+  animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.avatarPicker h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.avatarGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.avatarOption {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.avatarOption:hover {
+  transform: scale(1.1);
+}
+
+.avatarOption.selected {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup > label {
+  font-size: 0.875rem;
+  color: #808080;
+  font-weight: 500;
+}
+
+.input,
+.select {
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 0.875rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.select option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Toggle Label */
+.toggleLabel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.toggleLabel:hover {
+  background: #222;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #e50914;
+  cursor: pointer;
+}
+
+.toggleText {
+  color: #fff;
+  font-weight: 500;
+}
+
+.toggleDescription {
+  width: 100%;
+  margin-left: 32px;
+  font-size: 0.8125rem;
+  color: #808080;
+}
+
+/* Autoplay Options */
+.autoplayOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #ccc;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.saveButton {
+  flex: 1;
+  min-width: 120px;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveButton:hover:not(:disabled) {
+  background: #e6e6e6;
+}
+
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  flex: 1;
+  min-width: 120px;
+  background: transparent;
+  color: #808080;
+  border: 1px solid #808080;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.deleteButton {
+  flex: 1;
+  min-width: 120px;
+  background: transparent;
+  color: #b20710;
+  border: 1px solid #b20710;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.deleteButton:hover {
+  background: #b20710;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.75rem;
+  }
+
+  .currentAvatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatarLetter {
+    font-size: 2.5rem;
+  }
+
+  .avatarGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .avatarOption {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .saveButton,
+  .cancelButton,
+  .deleteButton {
+    width: 100%;
+  }
+}

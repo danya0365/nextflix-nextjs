@@ -12,10 +12,13 @@ interface MainHeaderProps {
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/browse", label: "Browse" },
-  { href: "/movies", label: "Movies" },
-  { href: "/series", label: "TV Shows" },
+  { href: "/browse/movies", label: "Movies" },
+  { href: "/browse/tv", label: "TV Shows" },
+  { href: "/latest", label: "New & Popular" },
   { href: "/my-list", label: "My List" },
+  { href: "/kids", label: "Kids" },
 ];
+
 
 /**
  * Modern Netflix-style header with glassmorphism
@@ -59,11 +62,11 @@ export function MainHeader({ isScrolled = false }: MainHeaderProps) {
           {/* Right side: Search, Notifications, Profile */}
           <div className="main-header-right">
             {/* Search Button */}
-            <button className="main-search-btn" aria-label="Search">
+            <Link href="/search" className="main-search-btn" aria-label="Search">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-            </button>
+            </Link>
 
             {/* Notifications */}
             <button className="main-search-btn" aria-label="Notifications">
@@ -76,14 +79,14 @@ export function MainHeader({ isScrolled = false }: MainHeaderProps) {
             <ThemeToggle />
 
             {/* Profile */}
-            <button className="main-profile-btn" aria-label="Profile menu">
+            <Link href="/profiles" className="main-profile-btn" aria-label="Profile menu">
               <div className="main-profile-avatar flex items-center justify-center">
                 <span className="text-white text-sm font-bold">N</span>
               </div>
               <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button

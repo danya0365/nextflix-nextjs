@@ -1,0 +1,408 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+  padding: 2rem;
+  padding-top: 100px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  color: #999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(229, 9, 20, 0.3);
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Section */
+.section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #808080;
+  margin-bottom: 1.5rem;
+}
+
+/* Membership Card */
+.membershipCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  margin-bottom: 1.5rem;
+}
+
+.membershipInfo,
+.billingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.email {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.memberSince {
+  font-size: 0.875rem;
+  color: #808080;
+}
+
+.planBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.planName {
+  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.planQuality {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.nextBilling {
+  font-size: 0.875rem;
+  color: #808080;
+}
+
+/* Buttons */
+.linkButton {
+  background: none;
+  border: none;
+  color: #0080ff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.linkButton:hover {
+  color: #66b3ff;
+}
+
+.changeButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #666;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.changeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #999;
+}
+
+.actionButton {
+  background: transparent;
+  border: 1px solid #666;
+  color: #999;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #999;
+  color: #fff;
+}
+
+/* Plan Details */
+.planDetails {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+.planRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.planLabel {
+  color: #808080;
+  font-size: 0.875rem;
+}
+
+.planValue {
+  color: #fff;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Features Grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ccc;
+  font-size: 0.9375rem;
+}
+
+.checkIcon {
+  color: #46d369;
+  font-weight: bold;
+}
+
+/* Profiles List */
+.profilesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.noProfiles {
+  padding: 2rem;
+  text-align: center;
+  color: #808080;
+}
+
+.profileRow {
+  border-bottom: 1px solid #333;
+}
+
+.profileRow:last-child {
+  border-bottom: none;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profileHeader:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.profileDetails {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profileName {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.kidsBadge {
+  background: #f5b700;
+  color: #000;
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.expandIcon {
+  color: #808080;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Profile Settings */
+.profileSettings {
+  padding: 0 1.5rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileSettingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #999;
+  padding: 0.5rem 0;
+}
+
+/* Settings List */
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.settingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.settingRow:last-child {
+  border-bottom: none;
+}
+
+.settingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.settingLabel {
+  color: #fff;
+  font-size: 0.9375rem;
+}
+
+.settingDescription {
+  color: #808080;
+  font-size: 0.8125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .membershipCard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .planRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileHeader {
+    padding: 1rem;
+  }
+
+  .profileSettings {
+    padding-left: 1rem;
+  }
+
+  .settingRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
