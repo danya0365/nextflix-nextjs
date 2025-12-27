@@ -3,6 +3,7 @@
 import type { AccountSettingsViewModel } from "@/src/domain/entities/accountTypes";
 import { mockAccountRepository } from "@/src/infrastructure/repositories/mockAccountRepository";
 import { useEffect, useState } from "react";
+import { MainLayout } from "../layouts";
 import styles from "./AccountView.module.css";
 
 export function AccountView() {
@@ -31,6 +32,7 @@ export function AccountView() {
   }
 
   return (
+    <MainLayout>
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>Account</h1>
@@ -149,6 +151,7 @@ export function AccountView() {
         </section>
       </div>
     </div>
+    </MainLayout>
   );
 }
 
